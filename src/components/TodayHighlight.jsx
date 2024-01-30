@@ -32,7 +32,7 @@ const TodayHighlight = ({ weatherData, tempUnit }) => {
     <div className="today-container">
       <div className="today card">
         <div className="curr-weather-icon">
-          <img src={imgURI} alt="" width="100" height="100" />
+          <img src={imgURI} alt="" width="120" height="120" />
         </div>
         <div className="weather-details">
           <h2 className="cur-temp">

@@ -9,20 +9,11 @@
   transition: all ease 0.4s;
 
   color: aliceblue;
-  background-color: #111927;
-  background-image: radial-gradient(
-      at 50% 26%,
-      hsl(162, 77%, 40%) 0,
-      transparent 69%
-    ),
-    radial-gradient(at 82% 65%, hsl(218, 39%, 11%) 0, transparent 55%);
+  background: url("bg.jpg") no-repeat center center/cover;
 }
 
 .card {
-  /* backdrop-filter: blur(4px) saturate(100%);
-    -webkit-backdrop-filter: blur(4px) saturate(100%); */
-  /* background-color: rgba(120, 120, 122, 0.51); */
-  background-color: #191b1f63;
+  background-color: #343e3f7e;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
 }
@@ -76,6 +67,10 @@
   margin: 10px 0;
 }
 
+.highlight-name {
+  font-size: 0.9rem;
+}
+
 .hightlight-details {
   display: flex;
   flex-direction: row;
@@ -83,6 +78,7 @@
   justify-content: space-between;
   padding: 5px 0;
   height: 100%;
+  font-size: 1.2rem;
 }
 
 /* Media for devices smaller than desktop */
@@ -114,11 +110,6 @@
 
   .hightlight-details {
     padding: 5px 0;
-  }
-  .card {
-    background-color: #191b1f4d;
-    /* backdrop-filter: blur(8px) saturate(200%);
-    -webkit-backdrop-filter: blur(8px) saturate(200%); */
   }
 }
 

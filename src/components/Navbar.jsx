@@ -14,7 +14,7 @@ const Navbar = ({ handleChangeCity, weatherData, handleChangeTempUnit }) => {
     } else if (unit === "temp-feh") {
       handleChangeTempUnit("imperial");
     } else {
-      handleChangeTempUnit("standard");
+      handleChangeTempUnit("default");
     }
     console.log(unit);
   };
