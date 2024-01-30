@@ -1,0 +1,31 @@
+{
+  "coord": { "lon": 78.9809, "lat": 26.2839 },
+  "weather": [
+    {
+      "id": 804,
+      "main": "Clouds",
+      "description": "overcast clouds",
+      "icon": "04d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 291.85,
+    "feels_like": 291.03,
+    "temp_min": 291.85,
+    "temp_max": 291.85,
+    "pressure": 1019,
+    "humidity": 48,
+    "sea_level": 1019,
+    "grnd_level": 1001
+  },
+  "visibility": 10000,
+  "wind": { "speed": 1.2, "deg": 150, "gust": 0.93 },
+  "clouds": { "all": 95 },
+  "dt": 1706591532,
+  "sys": { "country": "IN", "sunrise": 1706578191, "sunset": 1706617465 },
+  "timezone": 19800,
+  "id": 1263057,
+  "name": "Mihona",
+  "cod": 200
+}
