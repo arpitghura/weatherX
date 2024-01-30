@@ -9,12 +9,12 @@
   transition: all ease 0.4s;
 
   color: aliceblue;
-  background: url("bg.jpg") no-repeat center center/cover;
+  /* background: url("bg.jpg") no-repeat center center/cover; */
 }
 
 .card {
   background-color: #343e3f7e;
-  border-radius: 12px;
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
@@ -23,10 +23,6 @@
   width: 40%;
   height: 100%;
   padding: 40px 15px 20px 15px;
-}
-
-.curr-weather-icon {
-  padding: 10px 0;
 }
 
 .cur-temp {

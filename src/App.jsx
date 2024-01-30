@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import TodayHighlight from "./components/TodayHighlight";
+import Forecast from "./components/Forecast";
 
 function App() {
   const [city, setCity] = useState("Mumbai");
@@ -42,7 +43,10 @@ function App() {
         handleChangeTempUnit={handleChangeTempUnit}
       />
       {weatherData && (
-        <TodayHighlight weatherData={weatherData} tempUnit={tempUnit} />
+        <>
+          <TodayHighlight weatherData={weatherData} tempUnit={tempUnit} />
+          <Forecast tempUnit={tempUnit} city={city} />
+        </>
       )}
     </div>
   );
