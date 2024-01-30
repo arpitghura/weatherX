@@ -1,37 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../styles/Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ handleChangeCity, weatherData, handleChangeTempUnit }) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [city, setCity] = useState("Mumbai");
-  const [allGeoData, setAllGeoData] = useState({});
-  const geoURI = `https://api.openweathermap.org/data/2.5/weather`;
-  const limit = 5;
-
   const handleChange = (e) => {
     setSearchQuery(e.target.value);
   };
 
-  const fetchWeatherData = async () => {
-    const response = await fetch(
-      `${geoURI}?q=${city}&appid=${import.meta.env.VITE_APP_API_KEY}`
-    );
-    const data = await response.json();
-    console.log(data);
-    setAllGeoData(data);
+  const handleChangeUnit = (e) => {
+    const unit = e.target.value;
+    if (unit === "temp-cel") {
+      handleChangeTempUnit("metric");
+    } else if (unit === "temp-feh") {
+      handleChangeTempUnit("imperial");
+    } else {
+      handleChangeTempUnit("standard");
+    }
+    console.log(unit);
   };
 
   const handleKeyDown = async (e) => {
     // check the code of the key pressd is enter or not
     if (e.code === "Enter") {
-      setCity(searchQuery);
-      // fetchWeatherData();
+      handleChangeCity(searchQuery);
     }
   };
-
-  // useEffect(() => {
-  //   fetchWeatherData();
-  // }, []);
 
   return (
     <header>
@@ -52,7 +45,7 @@ const Navbar = () => {
         </div>
         <div className="right">
           <div className="temp-unit-select">
-            <select name="temp-unit" id="tempUnit">
+            <select name="temp-unit" id="tempUnit" onChange={handleChangeUnit}>
               <option value="temp-cel">&deg;C</option>
               <option value="temp-feh">&deg;F</option>
               <option value="temp-kel">K</option>
@@ -74,7 +67,7 @@ const Navbar = () => {
               <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
-            <p>{city}</p>
+            <p>{weatherData?.name}</p>
           </div>
         </div>
       </div>
