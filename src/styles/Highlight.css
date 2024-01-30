@@ -1,0 +1,141 @@
+.today-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  height: 100%;
+  color: white;
+  transition: all ease 0.4s;
+
+  color: aliceblue;
+  background-color: #111927;
+  background-image: radial-gradient(
+      at 50% 26%,
+      hsl(162, 77%, 40%) 0,
+      transparent 69%
+    ),
+    radial-gradient(at 82% 65%, hsl(218, 39%, 11%) 0, transparent 55%);
+}
+
+.card {
+  /* backdrop-filter: blur(4px) saturate(100%);
+    -webkit-backdrop-filter: blur(4px) saturate(100%); */
+  /* background-color: rgba(120, 120, 122, 0.51); */
+  background-color: #191b1f63;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.today {
+  font-size: 1rem;
+  width: 40%;
+  height: 100%;
+  padding: 40px 15px 20px 15px;
+}
+
+.curr-weather-icon {
+  padding: 10px 0;
+}
+
+.cur-temp {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.temp-unit {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.highlights {
+  width: 50%;
+  padding: 20px 15px;
+}
+
+.highlight-heading {
+  font-size: large;
+  font-weight: 500;
+  padding: 0 0 10px 0;
+}
+
+.highlights-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+.highlight {
+  width: 25%;
+  height: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.hightlight-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+  height: 100%;
+}
+
+/* Media for devices smaller than desktop */
+
+@media screen and (max-width: 768px) {
+  .today-container {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .today {
+    width: 90%;
+    padding: 20px 15px;
+    margin: 10px;
+  }
+
+  .highlights {
+    width: 90%;
+    padding: 20px 15px;
+  }
+  .highlights-container {
+    flex-direction: row;
+  }
+
+  .highlight {
+    width: 40%;
+    margin: 5px;
+  }
+
+  .hightlight-details {
+    padding: 5px 0;
+  }
+  .card {
+    background-color: #191b1f4d;
+    /* backdrop-filter: blur(8px) saturate(200%);
+    -webkit-backdrop-filter: blur(8px) saturate(200%); */
+  }
+}
+
+/* Media for devices smaller than tablet */
+
+@media screen and (max-width: 425px) {
+  .today-container {
+    margin-top: 50px;
+  }
+
+  .highlights-container {
+    flex-direction: column;
+  }
+
+  .highlight {
+    width: 90%;
+    margin: 10px;
+    transform: translateX(-5px);
+  }
+}
