@@ -13,7 +13,7 @@ To view the live version of the App, Visit [weather-x-arpit.vercel.app](https://
 
 ## Installation
 
-This project is using [OpenWeatherMap](https://openweathermap.org/) API for fetching data. Steps to get the API key are described [here]().
+This project is using [OpenWeatherMap](https://openweathermap.org/) API for fetching data. Steps to get the API key are described [here](#steps-to-get-openweathermap-api-key).
 
 1. Fork the Repository.
 2. Clone the repository into your local system using the following command:
@@ -27,7 +27,7 @@ This project is using [OpenWeatherMap](https://openweathermap.org/) API for fetc
 3. Move to the project directory using `cd weatherX`.
 
 4. Copy the `.env.example` file and rename it to `.env.local`.
-5. Paste your `OpenWeatherMap` API key in place of `YOUR_API_KEY`. Steps to get an API key are described here.
+5. Paste your `OpenWeatherMap` API key in place of `YOUR_API_KEY`. Steps to get an API key are described [here](#steps-to-get-openweathermap-api-key).
    ```
    VITE_APP_API_KEY=YOUR_API_KEY
    ```
@@ -60,6 +60,14 @@ The App contains two files in the main directory namely `sample_city_data.json` 
 1. The `sample_city_data.json` file contains the data fetched for a city for the current time using Current Weather Data Collection.
 
 2. The `sample_forecast_data.json` file contains the data fetched for a city for the next 5 days with a 3-hour forecast for each day.
+
+## Tech Stack
+
+- HTML
+- CSS
+- Tailwind CSS
+- Javascript
+- React.js
 
 ---
 
