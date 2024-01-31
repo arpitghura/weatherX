@@ -9,7 +9,9 @@ To view the live version of the App, Visit [weather-x-arpit.vercel.app](https://
 1. Get Weather Data using City Name (supports globally).
 2. View Temperature in different units (&deg;Celcius, &deg;Fahrenheit, and Kelvin).
 3. View 5 days Forecast with (Average, maximum and minimum temperature and the weather description).
-   Along with the weather, you can view other highlights that include Humidity, Sunrise and Sunset time, Wind Speed and Direction, Feel temperature, visibility and more.
+4. Along with the weather, you can view other highlights that include Humidity, Sunrise and Sunset time, Wind Speed and Direction, Feel temperature, visibility and more.
+5. Press `Enter` to directly search the weather data of the inputted city.
+6. Fully responsive. Works well on any device.
 
 ## Installation
 
