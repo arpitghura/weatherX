@@ -5,18 +5,10 @@
 * {
   @apply leading-normal font-normal m-0 p-0;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-
-  /* color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424; */
-  /* font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
 }
 
 .today-container {
-  background: url("./bg.jpg") no-repeat center right/cover;
+  background: url("/bg.jpg") no-repeat center right/cover;
 }
 .card {
   @apply backdrop-blur-[50px] border rounded-[20px] border-solid border-[rgba(255,255,255,0.125)];
