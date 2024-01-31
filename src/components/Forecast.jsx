@@ -27,7 +27,7 @@ const Forecast = ({ tempUnit, city }) => {
   return (
     <div className="forecast-container p-3">
       <h1 className="text-xl font-semibold py-5">5 days forecast</h1>
-      <div className="flex flex-row overflow-x-scroll flex-nowrap">
+      <div className="flex flex-row w-full lg:justify-around overflow-x-scroll flex-nowrap">
         {forecastData ? (
           forecastData.map((forecast) => {
             if (forecast.dt_txt.includes("12:00:00")) {

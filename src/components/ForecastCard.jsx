@@ -1,4 +1,5 @@
 import React from "react";
+import { CalendarDays } from "lucide-react";
 
 const ForecastCard = ({
   key,
@@ -22,10 +23,13 @@ const ForecastCard = ({
 
   return (
     <div
-      className="wrapper flex flex-col items-center justify-center min-w-max text-center p-3 rounded-xl card m-2"
+      className="flex flex-col items-center justify-between min-w-max  text-center p-3 rounded-xl card m-2"
       key={key}
     >
-      <div className="date">{date}</div>
+      <div className="flex gap-1 date">
+        <CalendarDays strokeWidth="1" />
+        {date}
+      </div>
       <div className="temp-icon">
         <img src={imgURI} alt={weatherDesc} width="150" height="150" />
       </div>

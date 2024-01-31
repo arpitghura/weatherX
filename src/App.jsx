@@ -45,6 +45,13 @@ function App() {
           <Forecast tempUnit={tempUnit} city={city} />
         </>
       )}
+
+      <footer>
+        <p className="text-center bg-gray-800 p-4 text-white text-base font-medium">
+          Made with &hearts; by{" "}
+          <a href="https://github.com/arpitghura">Arpit Ghura</a>
+        </p>
+      </footer>
     </div>
   );
 }
