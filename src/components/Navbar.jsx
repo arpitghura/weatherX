@@ -16,7 +16,6 @@ const Navbar = ({ handleChangeCity, handleChangeTempUnit }) => {
     } else {
       handleChangeTempUnit("default");
     }
-    console.log(unit);
   };
 
   const handleKeyDown = async (e) => {
@@ -37,7 +36,7 @@ const Navbar = ({ handleChangeCity, handleChangeTempUnit }) => {
 
   return (
     <header>
-      <div className="container flex justify-between items-center p-2.5">
+      <div className="to-container flex justify-between w-full items-center p-2.5">
         <div className="left logo">
           <h1 className="logo-text text-[large] font-bold">WeatherX</h1>
         </div>

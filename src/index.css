@@ -28,8 +28,30 @@
   ); */
 }
 
+/* Media for devices smaller than desktop */
+@media screen and (max-width: 768px) {
+  .today-container {
+    @apply flex-col p-[15px];
+  }
+  .today {
+    @apply w-[90%] m-2.5 px-[15px] py-5;
+  }
+  .highlights {
+    @apply w-[90%] px-[15px] py-5;
+  }
+  .highlights-container {
+    @apply flex-row;
+  }
+  .highlight {
+    @apply w-2/5 m-[5px];
+  }
+  .hightlight-details {
+    @apply px-0 py-[5px];
+  }
+}
+
 @media screen and (max-width: 425px) {
-  .container {
+  .to-container {
     @apply block relative;
   }
   .search-bar {
@@ -50,27 +72,5 @@
   }
   .highlight {
     @apply w-[90%] translate-x-[-5px] m-2.5;
-  }
-}
-
-/* Media for devices smaller than desktop */
-@media screen and (max-width: 768px) {
-  .today-container {
-    @apply flex-col p-[15px];
-  }
-  .today {
-    @apply w-[90%] m-2.5 px-[15px] py-5;
-  }
-  .highlights {
-    @apply w-[90%] px-[15px] py-5;
-  }
-  .highlights-container {
-    @apply flex-row;
-  }
-  .highlight {
-    @apply w-2/5 m-[5px];
-  }
-  .hightlight-details {
-    @apply px-0 py-[5px];
   }
 }

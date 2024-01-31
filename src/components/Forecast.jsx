@@ -15,7 +15,6 @@ const Forecast = ({ tempUnit, city }) => {
     const data = await response.json();
     if (data.cod === "200") {
       setForecastData(data.list);
-      console.log("data:", data.list);
     } else {
       setError(data.message);
     }
@@ -26,9 +25,9 @@ const Forecast = ({ tempUnit, city }) => {
   }, [city, tempUnit]);
 
   return (
-    <div className="forecast-container mt-10 p-5">
-      <h1 className="heading py-5">5 days forecast</h1>
-      <div className="flex forecasts-main-container flex-wrap">
+    <div className="forecast-container p-3">
+      <h1 className="text-xl font-semibold py-5">5 days forecast</h1>
+      <div className="flex flex-row overflow-x-scroll flex-nowrap">
         {forecastData ? (
           forecastData.map((forecast) => {
             if (forecast.dt_txt.includes("12:00:00")) {

@@ -27,12 +27,12 @@ const TodayHighlight = ({ weatherData, tempUnit }) => {
 
   const iconBaseURI = `https://openweathermap.org/img/wn/`;
   const imgURI = `${iconBaseURI}${weatherData?.weather[0]?.icon}@4x.png`;
-  console.log(imgURI);
+
   return (
     <div className="today-container flex flex-row items-center justify-between h-full transition-all duration-[ease] delay-[0.4s] text-[whitesmoke] p-[15px]">
-      <div className="text-base w-2/5 h-full px-[15px] py-5 card">
-        <div className="flex flex-row space-around w-max gap-4 text-whitesmoke">
-          <div className="flex flex-row gap-1 city">
+      <div className="today text-base w-2/5 h-full px-[15px] py-5 card">
+        <div className="flex flex-col md:flex-row space-around w-max gap-4 text-whitesmoke">
+          <div className="flex flex-row  gap-1 city">
             <MapPin />
             <p>{weatherData?.name}</p>
           </div>

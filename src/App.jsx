@@ -16,7 +16,6 @@ function App() {
       }`
     );
     const data = await response.json();
-    console.log(data);
     setWeatherData(data);
   };
 
@@ -40,10 +39,12 @@ function App() {
         handleChangeCity={handleChangeCity}
         handleChangeTempUnit={handleChangeTempUnit}
       />
-      {/* {weatherData && ( */}
-      <TodayHighlight weatherData={weatherData} tempUnit={tempUnit} />
-      {/* )} */}
-      <Forecast tempUnit={tempUnit} city={city} />
+      {weatherData && (
+        <>
+          <TodayHighlight weatherData={weatherData} tempUnit={tempUnit} />
+          <Forecast tempUnit={tempUnit} city={city} />
+        </>
+      )}
     </div>
   );
 }
