@@ -33,7 +33,6 @@ const Forecast = ({ tempUnit, city }) => {
             if (forecast.dt_txt.includes("12:00:00")) {
               return (
                 <ForecastCard
-                  dt={forecast.dt}
                   weatherIcon={forecast.weather[0].icon}
                   weatherDesc={forecast.weather[0].description}
                   minTemp={forecast.main.temp_min}
@@ -41,6 +40,7 @@ const Forecast = ({ tempUnit, city }) => {
                   temp={forecast.main.temp}
                   date={forecast.dt_txt.split(" ")[0]}
                   tempUnit={tempUnit}
+                  key={forecast.dt}
                 />
               );
             }

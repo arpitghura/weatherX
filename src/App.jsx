@@ -19,10 +19,10 @@ function App() {
     const data = await response.json();
     if (data.cod === 200 && data.name === city) {
       setWeatherData(data);
-    } else if (data.cod === 500) {
-      setError("We ran into some error. Please try again in some time.");
     } else if (data.name !== city) {
       setError("City Name is incorrect. Please try again.");
+    } else if (data.cod === 500) {
+      setError("We ran into some error. Please try again in some time.");
     } else {
       setError(data.message);
     }
@@ -57,9 +57,17 @@ function App() {
       )}
 
       {error !== undefined && (
-        <p className="text-center text-red-500 font-lg font-semibold">
-          {error}
-        </p>
+        <div className="flex flex-col items-center p-3">
+          <img
+            src="./errorImage.jpg"
+            alt="Error: Ran into a problem"
+            height="500"
+            width="500"
+          />
+          <h2 className="text-center text-red-500 font-xl font-semibold">
+            {error}
+          </h2>
+        </div>
       )}
 
       <footer>
