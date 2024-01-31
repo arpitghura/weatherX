@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import TodayHighlight from "./components/TodayHighlight";
 import Forecast from "./components/Forecast";
+import ForecastCard from "./components/ForecastCard";
 
 function App() {
   const [city, setCity] = useState("Bhopal");
@@ -31,9 +32,9 @@ function App() {
     fetchWeatherData();
   };
 
-  // useEffect(() => {
-  //   fetchWeatherData();
-  // }, [city, tempUnit]);
+  useEffect(() => {
+    fetchWeatherData();
+  }, [city, tempUnit]);
 
   return (
     <div className="app">
@@ -41,12 +42,10 @@ function App() {
         handleChangeCity={handleChangeCity}
         handleChangeTempUnit={handleChangeTempUnit}
       />
-      {weatherData && (
-        <>
-          <TodayHighlight weatherData={weatherData} tempUnit={tempUnit} />
-          <Forecast tempUnit={tempUnit} city={city} />
-        </>
-      )}
+      {/* {weatherData && ( */}
+      <TodayHighlight weatherData={weatherData} tempUnit={tempUnit} />
+      {/* )} */}
+      <Forecast tempUnit={tempUnit} city={city} />
     </div>
   );
 }

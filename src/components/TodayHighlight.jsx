@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import HighlightCard from "./HighlightCard";
+import { CalendarDays, MapPin } from "lucide-react";
 import "../styles/Highlight.css";
 
 const TodayHighlight = ({ weatherData, tempUnit }) => {
@@ -31,26 +32,23 @@ const TodayHighlight = ({ weatherData, tempUnit }) => {
   return (
     <div className="today-container">
       <div className="today card">
-        <div className="current-city">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#F5F5F5"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="lucide lucide-map-pin"
-          >
-            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-            <circle cx="12" cy="10" r="3" />
-          </svg>
-          <p>{weatherData?.name}</p>
+        <div className="flex flex-row space-around w-max gap-4 text-whitesmoke">
+          <div className="flex flex-row gap-1 city">
+            <MapPin />
+            <p>{weatherData?.name}</p>
+          </div>
+          <div className="flex flex-row gap-1 date">
+            <CalendarDays />
+            <p>{new Date().toDateString()}</p>
+          </div>
         </div>
         <div className="curr-weather-icon">
-          <img src={imgURI} alt="" width="120" height="120" />
+          <img
+            src={imgURI}
+            alt={weatherData?.weather[0]?.description}
+            width="120"
+            height="120"
+          />
         </div>
         <div className="weather-details">
           <h2 className="cur-temp">

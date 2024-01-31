@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Search } from "lucide-react";
 import "../styles/Navbar.css";
 
 const Navbar = ({ handleChangeCity, handleChangeTempUnit }) => {
@@ -21,9 +22,18 @@ const Navbar = ({ handleChangeCity, handleChangeTempUnit }) => {
 
   const handleKeyDown = async (e) => {
     // check the code of the key pressd is enter or not
+    if (e.code === "Enter" && searchQuery === "") return;
     if (e.code === "Enter") {
       handleChangeCity(searchQuery);
+      setSearchQuery("");
     }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (searchQuery === "") return;
+    handleChangeCity(searchQuery);
+    setSearchQuery("");
   };
 
   return (
@@ -42,22 +52,8 @@ const Navbar = ({ handleChangeCity, handleChangeTempUnit }) => {
             onKeyDown={handleKeyDown}
             className="search-input"
           />
-          <button className="search-icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-search"
-            >
-              <circle cx="11" cy="11" r="8" />
-              <path d="m21 21-4.3-4.3" />
-            </svg>
+          <button className="search-icon" onClick={handleSubmit}>
+            <Search />
           </button>
         </div>
         <div className="right">
