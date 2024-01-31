@@ -30,7 +30,7 @@ const TodayHighlight = ({ weatherData, tempUnit }) => {
 
   return (
     <div className="today-container flex flex-row items-center justify-between h-full transition-all duration-[ease] delay-[0.4s] text-[whitesmoke] p-[15px]">
-      <div className="today text-base w-2/5 h-full px-[15px] py-5 card">
+      <div className="today text-base w-2/5 h-full px-[15px] py-5 bg-[rgba(236,38,38,0.20)] card">
         <div className="flex flex-col md:flex-row space-around w-max gap-4 text-whitesmoke">
           <div className="flex flex-row  gap-1 city">
             <MapPin />
@@ -60,7 +60,7 @@ const TodayHighlight = ({ weatherData, tempUnit }) => {
         </div>
       </div>
 
-      <div className="highlights w-6/12 px-[15px] py-5 card">
+      <div className="highlights w-6/12 px-[15px] py-5 bg-[rgba(236,38,38,0.20)] card">
         <h2 className="highlight-heading text-[large] font-medium pt-0 pb-2.5 px-0">
           Today&apos;s Highlights
         </h2>

@@ -7,6 +7,7 @@ function App() {
   const [city, setCity] = useState("Bhopal");
   const [weatherData, setWeatherData] = useState(undefined);
   const [tempUnit, setTempUnit] = useState("metric");
+  const [error, setError] = useState(undefined);
   const geoURI = `https://api.openweathermap.org/data/2.5/weather`;
 
   const fetchWeatherData = async () => {
@@ -16,7 +17,15 @@ function App() {
       }`
     );
     const data = await response.json();
-    setWeatherData(data);
+    if (data.cod === 200 && data.name === city) {
+      setWeatherData(data);
+    } else if (data.cod === 500) {
+      setError("We ran into some error. Please try again in some time.");
+    } else if (data.name !== city) {
+      setError("City Name is incorrect. Please try again.");
+    } else {
+      setError(data.message);
+    }
   };
 
   const handleChangeTempUnit = (unit) => {
@@ -25,6 +34,7 @@ function App() {
   };
 
   const handleChangeCity = (cityName) => {
+    setError(undefined);
     setCity(cityName);
     fetchWeatherData();
   };
@@ -39,11 +49,17 @@ function App() {
         handleChangeCity={handleChangeCity}
         handleChangeTempUnit={handleChangeTempUnit}
       />
-      {weatherData && (
+      {weatherData && error === undefined && (
         <>
           <TodayHighlight weatherData={weatherData} tempUnit={tempUnit} />
           <Forecast tempUnit={tempUnit} city={city} />
         </>
+      )}
+
+      {error !== undefined && (
+        <p className="text-center text-red-500 font-lg font-semibold">
+          {error}
+        </p>
       )}
 
       <footer>

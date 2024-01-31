@@ -19,7 +19,7 @@
   background: url("bg.jpg") no-repeat center right/cover;
 }
 .card {
-  @apply bg-[rgba(236,38,38,0.11)] backdrop-blur-[50px] border rounded-[20px] border-solid border-[rgba(255,255,255,0.125)];
+  @apply backdrop-blur-[50px] border rounded-[20px] border-solid border-[rgba(255,255,255,0.125)];
 
   /* background: linear-gradient(
     260deg,

@@ -2,7 +2,7 @@ import React from "react";
 import { CalendarDays } from "lucide-react";
 
 const ForecastCard = ({
-  key,
+  dt,
   weatherIcon,
   weatherDesc,
   minTemp,
@@ -23,8 +23,8 @@ const ForecastCard = ({
 
   return (
     <div
-      className="flex flex-col items-center justify-between min-w-max  text-center p-3 rounded-xl card m-2"
-      key={key}
+      className="flex flex-col items-center justify-between min-w-max  text-center p-3 rounded-xl bg-[rgba(236,38,38,0.32)] card m-2"
+      key={dt}
     >
       <div className="flex gap-1 date">
         <CalendarDays strokeWidth="1" />
