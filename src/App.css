@@ -1,4 +1,0 @@
-.forecast-card {
-  @apply w-[min(180px,18vw)] text-center m-2.5 px-[15px] py-2.5 rounded-[20px];
-  background: rgb(255, 145, 0);
-}

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import HighlightCard from "./HighlightCard";
 import { CalendarDays, MapPin } from "lucide-react";
-import "../styles/Highlight.css";
 
 const TodayHighlight = ({ weatherData, tempUnit }) => {
   const getWindDirection = (deg) => {
@@ -30,8 +29,8 @@ const TodayHighlight = ({ weatherData, tempUnit }) => {
   const imgURI = `${iconBaseURI}${weatherData?.weather[0]?.icon}@4x.png`;
   console.log(imgURI);
   return (
-    <div className="today-container">
-      <div className="today card">
+    <div className="today-container flex flex-row items-center justify-between h-full transition-all duration-[ease] delay-[0.4s] text-[whitesmoke] p-[15px]">
+      <div className="text-base w-2/5 h-full px-[15px] py-5 card">
         <div className="flex flex-row space-around w-max gap-4 text-whitesmoke">
           <div className="flex flex-row gap-1 city">
             <MapPin />
@@ -51,17 +50,21 @@ const TodayHighlight = ({ weatherData, tempUnit }) => {
           />
         </div>
         <div className="weather-details">
-          <h2 className="cur-temp">
+          <h2 className="cur-temp text-5xl font-bold">
             {weatherData?.main?.temp.toFixed()}
-            <span className="temp-unit">{unitSymbol}</span>
+            <span className="text-5xl font-normal">{unitSymbol}</span>
           </h2>
-          <p className="cur-weather">{weatherData?.weather[0]?.description}</p>
+          <p className="cur-weather py-2">
+            {weatherData?.weather[0]?.description}
+          </p>
         </div>
       </div>
 
-      <div className="highlights card">
-        <h2 className="highlight-heading">Today&apos;s Highlights</h2>
-        <div className="highlights-container">
+      <div className="highlights w-6/12 px-[15px] py-5 card">
+        <h2 className="highlight-heading text-[large] font-medium pt-0 pb-2.5 px-0">
+          Today&apos;s Highlights
+        </h2>
+        <div className="highlights-container flex flex-row justify-between items-center w-full h-full flex-wrap">
           <HighlightCard
             title="Feels Like"
             value={weatherData?.main?.feels_like.toFixed()}
@@ -97,8 +100,8 @@ const TodayHighlight = ({ weatherData, tempUnit }) => {
           />
           <HighlightCard
             title="Wind Speed"
-            value={weatherData?.wind?.speed.toFixed()}
-            unit={"km"}
+            value={(weatherData?.wind?.speed * 3.6).toFixed()}
+            unit={"kmph"}
             param={getWindDirection(weatherData?.wind?.deg)}
           />
         </div>

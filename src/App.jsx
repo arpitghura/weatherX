@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import "./App.css";
 import Navbar from "./components/Navbar";
 import TodayHighlight from "./components/TodayHighlight";
 import Forecast from "./components/Forecast";
-import ForecastCard from "./components/ForecastCard";
 
 function App() {
   const [city, setCity] = useState("Bhopal");

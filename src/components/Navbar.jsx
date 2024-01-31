@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Search } from "lucide-react";
-import "../styles/Navbar.css";
 
 const Navbar = ({ handleChangeCity, handleChangeTempUnit }) => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -38,11 +37,11 @@ const Navbar = ({ handleChangeCity, handleChangeTempUnit }) => {
 
   return (
     <header>
-      <div className="container">
+      <div className="container flex justify-between items-center p-2.5">
         <div className="left logo">
-          <h1 className="logo-text">WeatherX</h1>
+          <h1 className="logo-text text-[large] font-bold">WeatherX</h1>
         </div>
-        <div className="center search-bar">
+        <div className="center search-bar w-2/5 min-w-min relative">
           <input
             type="text"
             placeholder="Enter city name"
@@ -50,15 +49,23 @@ const Navbar = ({ handleChangeCity, handleChangeTempUnit }) => {
             onChange={handleChange}
             value={searchQuery}
             onKeyDown={handleKeyDown}
-            className="search-input"
+            className="search-input w-full h-full border bg-transparent text-[black] text-base font-normal px-2 py-[0.7rem] rounded-[50px] border-solid border-[rgba(0,0,0,0.125)] outline-none"
           />
-          <button className="search-icon" onClick={handleSubmit}>
+          <button
+            className="search-icon absolute translate-x-2/4 text-base text-[rgba(0,0,0,0.5)] cursor-pointer bg-[#17b586bb] select-none text-center p-2.5 rounded-[50px] border-[none] right-[23px] top-0 outline-none"
+            onClick={handleSubmit}
+          >
             <Search />
           </button>
         </div>
         <div className="right">
           <div className="temp-unit-select">
-            <select name="temp-unit" id="tempUnit" onChange={handleChangeUnit}>
+            <select
+              name="temp-unit"
+              id="tempUnit"
+              onChange={handleChangeUnit}
+              className="w-full h-full border bg-transparent text-[black] text-base font-normal cursor-pointer p-[0.3rem] rounded-[10px] border-solid border-[rgba(0,0,0,0.125)] outline-none"
+            >
               <option value="temp-cel">&deg;Celcius</option>
               <option value="temp-feh">&deg;Fahrenheit</option>
               <option value="temp-kel">Kelvin</option>
