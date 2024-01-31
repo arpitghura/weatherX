@@ -5,7 +5,7 @@ import TodayHighlight from "./components/TodayHighlight";
 import Forecast from "./components/Forecast";
 
 function App() {
-  const [city, setCity] = useState("Mumbai");
+  const [city, setCity] = useState("Bhopal");
   const [weatherData, setWeatherData] = useState(undefined);
   const [tempUnit, setTempUnit] = useState("metric");
   const geoURI = `https://api.openweathermap.org/data/2.5/weather`;
@@ -31,15 +31,14 @@ function App() {
     fetchWeatherData();
   };
 
-  useEffect(() => {
-    fetchWeatherData();
-  }, [city, tempUnit]);
+  // useEffect(() => {
+  //   fetchWeatherData();
+  // }, [city, tempUnit]);
 
   return (
     <div className="app">
       <Navbar
         handleChangeCity={handleChangeCity}
-        weatherData={weatherData}
         handleChangeTempUnit={handleChangeTempUnit}
       />
       {weatherData && (

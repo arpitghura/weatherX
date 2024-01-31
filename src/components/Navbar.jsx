@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Navbar.css";
 
-const Navbar = ({ handleChangeCity, weatherData, handleChangeTempUnit }) => {
+const Navbar = ({ handleChangeCity, handleChangeTempUnit }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const handleChange = (e) => {
     setSearchQuery(e.target.value);
@@ -42,32 +42,31 @@ const Navbar = ({ handleChangeCity, weatherData, handleChangeTempUnit }) => {
             onKeyDown={handleKeyDown}
             className="search-input"
           />
+          <button className="search-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-search"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </button>
         </div>
         <div className="right">
           <div className="temp-unit-select">
             <select name="temp-unit" id="tempUnit" onChange={handleChangeUnit}>
-              <option value="temp-cel">&deg;C</option>
-              <option value="temp-feh">&deg;F</option>
-              <option value="temp-kel">K</option>
+              <option value="temp-cel">&deg;Celcius</option>
+              <option value="temp-feh">&deg;Fahrenheit</option>
+              <option value="temp-kel">Kelvin</option>
             </select>
-          </div>
-          <div className="current-city">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#2b2b2b"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-map-pin"
-            >
-              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-            <p>{weatherData?.name}</p>
           </div>
         </div>
       </div>

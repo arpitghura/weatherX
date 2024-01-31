@@ -3,9 +3,8 @@ import "../styles/Highlight.css";
 
 const HighlightCard = (props) => {
   const { title, value, unit, param } = props;
-  //   console.log(props);
   return (
-    <div className="highlight card">
+    <div className="highlight">
       <p className="highlight-name">{title}</p>
       <div className="hightlight-details">
         <p className="highlight-value">

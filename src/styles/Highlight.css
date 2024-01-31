@@ -5,15 +5,20 @@
   justify-content: space-between;
   padding: 15px;
   height: 100%;
-  color: white;
   transition: all ease 0.4s;
 
-  color: aliceblue;
-  /* background: url("bg.jpg") no-repeat center center/cover; */
+  color: whitesmoke;
+  background: url("bg.jpg") no-repeat bottom right fixed;
 }
 
 .card {
-  background-color: #343e3f7e;
+  background-color: rgba(236, 38, 38, 0.11);
+  /* background: linear-gradient(
+    260deg,
+    rgba(255, 106, 0, 0.707) 0%,
+    rgba(255, 170, 0, 0.707) 74%
+  ); */
+  backdrop-filter: blur(50px);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.125);
 }
@@ -23,6 +28,20 @@
   width: 40%;
   height: 100%;
   padding: 40px 15px 20px 15px;
+}
+
+.current-city {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  width: max-content;
+  border: 1px solid rgba(255, 255, 255, 0.452);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.4rem;
+  user-select: none;
+  cursor: pointer;
 }
 
 .cur-temp {
